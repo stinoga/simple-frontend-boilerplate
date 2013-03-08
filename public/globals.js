@@ -1,7 +1,7 @@
 //global namespace
-window.sfb = {};
+window.rms = {};
 
-window.sfb.globals = function(win, doc, $, _, Modernizr, undefined){
+window.rms.globals = function(win, doc, $, _, Modernizr, undefined){
 
 	//private properties
 	var privateValue = 'privateValue';
@@ -22,7 +22,7 @@ window.sfb.globals = function(win, doc, $, _, Modernizr, undefined){
 
 	}();
 
-	console.log(this); //here this is sfb object
+	console.log(this); //here this is rms object
 
 	//public, can also place global constants here
 	return {
@@ -30,4 +30,4 @@ window.sfb.globals = function(win, doc, $, _, Modernizr, undefined){
 		publicMethod:publicMethod
 	};
 
-}.call(window.sfb, window, document, jQuery, _, Modernizr /*, omitted undefined here */);
+}.call(window.rms, window, document, jQuery, _, Modernizr /*, omitted undefined here */);
