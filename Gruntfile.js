@@ -84,6 +84,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-notify');
 
   // Default task.
   grunt.registerTask('default', ['handlebars','cssmin','uglify','replace']);
