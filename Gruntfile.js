@@ -41,7 +41,6 @@ module.exports = function(grunt) {
           'public/build/index.min.css': [
             //CSS libraries used on this page
             'public/libraries/thirdparty/normalize-css/normalize.css',
-            'public/libraries/customTwitterBootstrap/bootstrapBase.css',
             'public/libraries/thirdparty/font-awesome/css/font-awesome.css',
             //global css file
             'public/globals.css',
