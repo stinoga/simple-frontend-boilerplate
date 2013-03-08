@@ -1,5 +1,5 @@
 
-window.sfb.moduleB = function(win, doc, $, _, Modernizr){
+window.rms.moduleB = function(win, doc, $, _, Modernizr){
 
 	var compiledModuleBTemplate = Handlebars.getTemplate('/modules/moduleB/moduleB.hbs');
 
@@ -26,7 +26,7 @@ window.sfb.moduleB = function(win, doc, $, _, Modernizr){
 
 	}();
 
-	console.log(this); //here this is sfb object
+	console.log(this); //here this is rms object
 
 	//public
 	return {
@@ -34,4 +34,4 @@ window.sfb.moduleB = function(win, doc, $, _, Modernizr){
 		publicMethod:publicMethod
 	};
 
-}.call(window.sfb, window, document, jQuery, _, Modernizr /*, omitted undefined here */);
+}.call(window.rms, window, document, jQuery, _, Modernizr /*, omitted undefined here */);

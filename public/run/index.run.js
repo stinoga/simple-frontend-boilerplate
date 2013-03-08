@@ -1,3 +1,3 @@
-console.log(sfb.moduleA);
-console.log(sfb.moduleB);
-console.log(sfb.moduleC);
+console.log(rms.moduleA);
+console.log(rms.moduleB);
+console.log(rms.moduleC);
