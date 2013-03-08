@@ -35,6 +35,18 @@ module.exports = function(grunt) {
       }
     },
 
+    sass: {
+      dist: {
+        options: {
+          style: 'compressed',
+          compass: true
+        },
+        files: {
+          'public/build/index.min.css': 'main.sass'
+        }
+      }
+    },
+
     cssmin: {
       index: {
         files: {
@@ -84,9 +96,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-notify');
 
-  // Default task.
-  grunt.registerTask('default', ['handlebars','cssmin','uglify','replace']);
+  // Default task, watch for Sass changes
+  grunt.registerTask('default', ['sass','watch']);
+
+  // Build task
+  grunt.registerTask('build', ['handlebars','uglify','replace']);
 
 };
