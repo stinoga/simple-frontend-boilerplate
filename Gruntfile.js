@@ -35,6 +35,11 @@ module.exports = function(grunt) {
       }
     },
 
+    watch: {
+      files: '<%= sass.dist.files %>',
+      tasks: 'default'
+    },
+
     sass: {
       dist: {
         options: {
