@@ -134,6 +134,16 @@ From the command line, in a terminal, go to the root directory and run:
 
 This will run the `/public/index.html` at `http://localhost:PORT NUMBER PROVIDED IN SET IN SETUP STEP 5` (e.g. `http://localhost:3044`). Now open a web browser and visit the `http://localhost:PORT NUMBER PROVIDED IN SET IN SETUP STEP 5`
 
+
+If you are working with SASS, run:
+
+
+```js
+> grunt
+```
+
+This will kick off the watch, looking for any updates to your SASS files.
+
 ##Configuration
 
 #####Step 1: Change namespace
@@ -154,7 +164,7 @@ Update the namespace used in the module files (i.e. replace `sfb` with your cust
 Go to the root directory and run:
 
 ```js
-> grunt
+> grunt build
 ```
 
 This will create concatenated & minified version of the css and js files. Additionally it will precompile the handlebars files and place the JavaScript code in a single compiled file. All of this will be sent to `public/build/`. Have a look at the `grunt.js` file to configure the build.
