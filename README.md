@@ -37,11 +37,11 @@ A starting point to develop websites or small web applications without forcing a
 * [modernizr](http://modernizr.com/)
 * [handlebars.js](http://handlebarsjs.com/)
 * [yepnope](http://yepnopejs.com/)
+* [SASS](http://sass-lang.com/)
 * [normalize.css](http://necolas.github.com/normalize.css/)
 * [string.js](http://stringjs.com/)
 * [js-url](https://github.com/websanova/js-url)
 * [director](https://github.com/flatiron/director)
-* [font awesome](http://fortawesome.github.com/Font-Awesome/)
 
 ##Setup
 
@@ -104,8 +104,7 @@ This will install the follow libraries in `/public/libraries/thirdparty/`:
     "js-url": "https://github.com/websanova/js-url.git#~1.7.5",
     "director": "https://github.com/flatiron/director.git#~1.1.10",
     "handlebars.js": "~1.0.8",
-    "yepnope": "~1.5.4",
-    "font-awesome": "~3.0.2"
+    "yepnope": "~1.5.4"
 }
 ```
 
@@ -233,8 +232,6 @@ When you are not running from a localhost the html pages use the minified and co
 	├── globals.js
 	├── index.html
 	├── libraries
-	│   ├── customTwitterBootstrap
-	│   │   └── bootstrapBase.css
 	│   ├── getHandleBarsTemp
 	│   │   └── getHandleBarsTemp.js
 	│   ├── projectSpecificLibrary
