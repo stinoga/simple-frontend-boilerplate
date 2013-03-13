@@ -43,11 +43,11 @@ module.exports = function(grunt) {
     sass: {
       dev: {
         options: {
-          style: 'compressed',
+          style: 'expanded',
           compass: true
         },
-        src: ['./sass/main.sass'],
-        dest: './public/build/index.min.css'
+        src: ['sass/main.sass'],
+        dest: 'public/sass.css'
       }
     },
 
@@ -59,6 +59,8 @@ module.exports = function(grunt) {
             'public/libraries/thirdparty/normalize-css/normalize.css',
             //global css file
             'public/globals.css',
+            // SASS files
+            'public/sass.css',
             //CSS module used on this page
             'public/modules/moduleA/moduleA.css',
             'public/modules/moduleB/moduleB.css',
@@ -107,6 +109,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['sass', 'watch']);
 
   // Build task
-  grunt.registerTask('build', ['handlebars', 'uglify', 'replace']);
+  grunt.registerTask('build', ['handlebars', 'cssmin', 'uglify', 'replace']);
 
 };
