@@ -36,19 +36,18 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      files: '<%= sass.dist.files %>',
+      files: ['<%= sass.dev.src %>'],
       tasks: 'default'
     },
 
     sass: {
-      dist: {
+      dev: {
         options: {
           style: 'compressed',
           compass: true
         },
-        files: {
-          'public/build/index.min.css': 'main.sass'
-        }
+        src: ['./sass/main.sass'],
+        dest: './public/build/index.min.css'
       }
     },
 
@@ -106,9 +105,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-notify');
 
   // Default task, watch for Sass changes
-  grunt.registerTask('default', ['sass','watch']);
+  grunt.registerTask('default', ['sass', 'watch']);
 
   // Build task
-  grunt.registerTask('build', ['handlebars','uglify','replace']);
+  grunt.registerTask('build', ['handlebars', 'uglify', 'replace']);
 
 };
