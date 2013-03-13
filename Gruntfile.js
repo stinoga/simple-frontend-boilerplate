@@ -93,6 +93,21 @@ module.exports = function(grunt) {
         ],
         dest: 'public/build/index.min.js'
       }
+    },
+
+    notify: {
+      sass: {
+        options: {
+          title: 'Sassy',
+          message: 'SASS files compiled!!!1'
+        }
+      },
+      build: {
+        options: {
+          title: 'Build',
+          message: 'Build Finished.'
+        }
+      }
     }
 
   });
@@ -106,9 +121,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-notify');
 
   // Default task, watch for Sass changes
-  grunt.registerTask('default', ['sass', 'watch']);
+  grunt.registerTask('default', ['sass', 'notify:sass', 'watch']);
 
   // Build task
-  grunt.registerTask('build', ['handlebars', 'cssmin', 'uglify', 'replace']);
+  grunt.registerTask('build', ['handlebars', 'cssmin', 'uglify', 'replace', 'notify:build']);
 
 };
