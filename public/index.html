@@ -3,100 +3,102 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-        <!-- This makes sure the latest version of IE is used in versions of IE that contain multiple rendering engines. Even if a site visitor is using IE8 or IE9, it's possible that they're not using the latest rendering engine their browser contains. To fix this, use: -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- This makes sure the latest version of IE is used in versions of IE that contain multiple rendering engines. Even if a site visitor is using IE8 or IE9, it's possible that they're not using the latest rendering engine their browser contains. To fix this, use: -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>Simple Frontend Boilerplate</title>
+    <title>Simple Frontend Boilerplate</title>
 
-        <!-- Enter a brief description of your page -->
-        <meta name="description" content="">
+    <!-- Enter a brief description of your page -->
+    <meta name="description" content="">
 
-        <!-- Define a viewport to mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width) and setting the initial page zoom level to be 1 (initial-scale=1.0) -->
-        <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <!-- Define a viewport to mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width) and setting the initial page zoom level to be 1 (initial-scale=1.0) -->
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <!-- only http blocking script tag used -->
-        <script src="/libraries/thirdparty/yepnope/yepnope.1.5.4-min.js"></script>
+    <!-- only http blocking script tag used -->
+    <script src="/libraries/thirdparty/yepnope/yepnope.1.5.4-min.js"></script>
 
-        <!-- load css -->
-        <script>
-            /*if you are developing on http://localhost:XXXX load individual files or force build file use with ?compress=false*/
-            var url = window.location;
-            if(
-                url.search.indexOf('compress=false') === 1 ||
-                url.hostname === 'localhost' &&
-                url.search.indexOf('compress=true') === -1
-            ){
-                yepnope({
-                    load:[
-                        //CSS libraries used on this page
-                        '/libraries/thirdparty/normalize-css/normalize.css'
-                        //global css file
-                        '/globals.css',
-                        //CSS modules used on this page
-                        '/modules/moduleA/moduleA.css',
-                        '/modules/moduleB/moduleB.css',
-                        '/modules/moduleC/moduleC.css'
-                    ],
-                    complete: function(){document.body.style.display = "block"} //avoid css flicker
-                });
-            }else{
-                yepnope({
-                    load:'/build/index.min.css?v=0-1-0', //css build file
-                    complete: function(){document.body.style.display = "block"} //avoid css flicker
-                });
-            }
-        </script>
+    <!-- load css -->
+    <script>
+        /*if you are developing on http://localhost:XXXX load individual files or force build file use with ?compress=false*/
+        var url = window.location;
+        if(
+          url.search.indexOf('compress=false') === 1 ||
+          url.hostname === 'localhost' &&
+          url.search.indexOf('compress=true') === -1
+        ){
+          yepnope({
+            load:[
+              //CSS libraries used on this page
+              '/libraries/thirdparty/normalize-css/normalize.css',
+              //global css file
+              '/globals.css',
+              //SASS file
+              '/sass.css',
+              //CSS modules used on this page
+              '/modules/moduleA/moduleA.css',
+              '/modules/moduleB/moduleB.css',
+              '/modules/moduleC/moduleC.css'
+            ],
+            complete: function(){document.body.style.display = "block"} //avoid css flicker
+          });
+        }else{
+          yepnope({
+            load:'/build/index.min.css?v=0-1-0', //css build file
+            complete: function(){document.body.style.display = "block"} //avoid css flicker
+          });
+        }
+    </script>
 
-    </head>
-    <body style="display:none;">
+  </head>
+  <body style="display:none;">
 
-        <h1>Simple Frontend Boilerplate</h1>
+    <h1>Simple Frontend Boilerplate</h1>
 
-        <p class="lead">A starting point to develop websites or small web applications without forcing a specific MV* framework or module dependancy loader. This boilerplate can be used for simple websites, websites with minimal application like interfaces, or very small web applications that only require a handful of modules not hundreds. The boilerplate is flexible in that it could be used for a single page architecture, a hybrid approach, or a traditional web page architecture. Additionally, its possible to drop the build step and rely on the speed of yepnope.</p>
+    <p class="lead">A starting point to develop websites or small web applications without forcing a specific MV* framework or module dependancy loader. This boilerplate can be used for simple websites, websites with minimal application like interfaces, or very small web applications that only require a handful of modules not hundreds. The boilerplate is flexible in that it could be used for a single page architecture, a hybrid approach, or a traditional web page architecture. Additionally, its possible to drop the build step and rely on the speed of yepnope.</p>
 
-        <p class="lead">Why? Because not every project requires an AMD/CommonJS dependancy loader or some degree of MV*. In fact, simple and small is always better than over optimizing or planning for the unknown. Additionally, without a boilerplate like this, one might never really grok why moving to the next level of application organization is necessary. When you find the pain points with this simple organization, its time to consider a loader and MV*. Mostly so that you can take advantage of things like, dependency management, data binding, and framework features.</p>
+    <p class="lead">Why? Because not every project requires an AMD/CommonJS dependancy loader or some degree of MV*. In fact, simple and small is always better than over optimizing or planning for the unknown. Additionally, without a boilerplate like this, one might never really grok why moving to the next level of application organization is necessary. When you find the pain points with this simple organization, its time to consider a loader and MV*. Mostly so that you can take advantage of things like, dependency management, data binding, and framework features.</p>
 
-        <p>Example below of loading modules A, B, and C. All of which use a handlebars template.</p>
+    <p>Example below of loading modules A, B, and C. All of which use a handlebars template.</p>
 
-        <!-- load js -->
-        <script>
-            /*if you are developing on http://localhost:XXXX load individual files or force build file use with ?compress=false*/
-            var url = window.location;
-            if(
-                url.search.indexOf('compress=false') === 1 ||
-                url.hostname === 'localhost' &&
-                url.search.indexOf('compress=true') === -1
-            ){
-                yepnope({load:[
-                    //JS Libraries used on this page
-                    '/libraries/thirdparty/jquery/jquery.js',
-                    '/libraries/thirdparty/lodash/lodash.js',
-                    '/libraries/thirdparty/modernizr-latest/index.js',
-                    '/libraries/thirdparty/string.js/lib/string.js',
-                    '/libraries/thirdparty/director/build/director.js',
-                    '/libraries/thirdparty/handlebars.js/dist/handlebars.js',
-                    '/libraries/getHandleBarsTemp/getHandleBarsTemp.js',
-                    '/libraries/projectSpecificLibrary/projectSpecificLib.js',
-                    //global.js (includes router setup, contants, and initial setup)
-                    '/globals.js',
-                    //JS modules used on this page
-                    '/modules/moduleA/moduleA.js',
-                    '/modules/moduleB/moduleB.js',
-                    '/modules/moduleC/moduleC.js',
-                    //run index.html
-                    '/run/index.run.js'
-                ]});
-            }else{ //if this is not on localhost use build file or force build file use with ?compress=true
-                yepnope({load:
-                    '/build/index.min.js?v=0-1-0' //js build file
-                });
-            }
-        </script>
+    <!-- load js -->
+    <script>
+      /*if you are developing on http://localhost:XXXX load individual files or force build file use with ?compress=false*/
+      var url = window.location;
+      if(
+        url.search.indexOf('compress=false') === 1 ||
+        url.hostname === 'localhost' &&
+        url.search.indexOf('compress=true') === -1
+      ){
+        yepnope({load:[
+          //JS Libraries used on this page
+          '/libraries/thirdparty/jquery/jquery.js',
+          '/libraries/thirdparty/lodash/lodash.js',
+          '/libraries/thirdparty/modernizr-latest/index.js',
+          '/libraries/thirdparty/string.js/lib/string.js',
+          '/libraries/thirdparty/director/build/director.js',
+          '/libraries/thirdparty/handlebars.js/dist/handlebars.js',
+          '/libraries/getHandleBarsTemp/getHandleBarsTemp.js',
+          '/libraries/projectSpecificLibrary/projectSpecificLib.js',
+          //global.js (includes router setup, contants, and initial setup)
+          '/globals.js',
+          //JS modules used on this page
+          '/modules/moduleA/moduleA.js',
+          '/modules/moduleB/moduleB.js',
+          '/modules/moduleC/moduleC.js',
+          //run index.html
+          '/run/index.run.js'
+        ]});
+      }else{ //if this is not on localhost use build file or force build file use with ?compress=true
+        yepnope({load:
+          '/build/index.min.js?v=0-1-0' //js build file
+        });
+      }
+    </script>
 
-    </body>
+  </body>
 </html>
