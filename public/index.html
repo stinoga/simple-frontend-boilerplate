@@ -24,34 +24,34 @@
 
     <!-- load css -->
     <script>
-        /*if you are developing on http://localhost:XXXX load individual files or force build file use with ?compress=false*/
-        var url = window.location;
-        if(
-          url.search.indexOf('compress=false') === 1 ||
-          url.hostname === 'localhost' &&
-          url.search.indexOf('compress=true') === -1
-        ){
-          yepnope({
-            load:[
-              //CSS libraries used on this page
-              '/libraries/thirdparty/normalize-css/normalize.css',
-              //global css file
-              '/globals.css',
-              //SASS file
-              '/sass.css',
-              //CSS modules used on this page
-              '/modules/moduleA/moduleA.css',
-              '/modules/moduleB/moduleB.css',
-              '/modules/moduleC/moduleC.css'
-            ],
-            complete: function(){document.body.style.display = "block"} //avoid css flicker
-          });
-        }else{
-          yepnope({
-            load:'/build/index.min.css?v=0-1-0', //css build file
-            complete: function(){document.body.style.display = "block"} //avoid css flicker
-          });
-        }
+      /*if you are developing on http://localhost:XXXX load individual files or force build file use with ?compress=false*/
+      var url = window.location;
+      if(
+        url.search.indexOf('compress=false') === 1 ||
+        url.hostname === 'localhost' &&
+        url.search.indexOf('compress=true') === -1
+      ){
+        yepnope({
+          load:[
+            //CSS libraries used on this page
+            '/libraries/thirdparty/normalize-css/normalize.css',
+            //global css file
+            '/globals.css',
+            //SASS file
+            '/sass.css',
+            //CSS modules used on this page
+            '/modules/moduleA/moduleA.css',
+            '/modules/moduleB/moduleB.css',
+            '/modules/moduleC/moduleC.css'
+          ],
+          complete: function(){document.body.style.display = "block"} //avoid css flicker
+        });
+      }else{
+        yepnope({
+          load:'/build/index.min.css?v=0-1-0', //css build file
+          complete: function(){document.body.style.display = "block"} //avoid css flicker
+        });
+      }
     </script>
 
   </head>
