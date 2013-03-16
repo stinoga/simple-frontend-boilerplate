@@ -112,13 +112,13 @@ The above code can be found in `component.json`. If you plan on adding or removi
 
 #####Step 6: Configure port in server.js
 
-Open the `server.js` file in editor of choice and update the port you'd like to server the webpages too. For example, based on the code below, once the server was running the html pages found in `/public` would be available at `http://localhost:3044`.
+Open the `server.js` file in editor of choice and update the port you'd like to server the webpages too. For example, based on the code below, once the server was running the html pages found in `/public` would be available at `http://localhost:3000`.
 
 
 ```js
 var connect = require("connect");
 
-connect().use(connect.static('public')).listen(3044);
+connect().use(connect.static('public')).listen(3000);
 ```
 
 ##Startup
@@ -152,9 +152,7 @@ Open the `public/global.js` file and change the global namespace (default is `sf
 
 Additionally, open each default module:
 
-* `public/modules/moduleA/moduleA.js`
 * `public/modules/moduleB/moduleB.js`
-* `public/modules/moduleC/moduleC.js`
 
 Update the namespace used in the module files (i.e. replace `sfb` with your custom namespace).
 
@@ -248,19 +246,10 @@ When you are not running from a localhost the html pages use the minified and co
 	│   │   └── projectSpecificLib.js
 	│   └── thirdparty
 	├── modules
-	│   ├── moduleA
-	│   │   ├── moduleA.css
-	│   │   ├── moduleA.hbs
-    │   │   └── moduleA.js
-    │   │   └── partialA.js
 	│   ├── moduleB
 	│   │   ├── moduleB.css
 	│   │   ├── moduleB.hbs
 	│   │   └── moduleB.js
-	│   └── moduleC
-	│       ├── moduleC.css
-	│       ├── moduleC.hbs
-	│       └── moduleC.js
 	└── run
 		    └── index.run.js
 
