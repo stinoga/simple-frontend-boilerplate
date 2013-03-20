@@ -50,11 +50,9 @@
   // 1140px/16px = 71.25em
   @import 1240up
 
-// RETINA (2x RESOLUTION DEVICES)
-// This applies to the retina iPhone (4s) and iPad (2,3) along with
-// other displays with a 2x resolution. You can also create a media
-// query for retina AND a certain size if you want. Go Nuts.
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)
+// HiDPI
+// 1.3 ratio because devices like Nexus 7, might as well give them @2x assets too
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3)
   // styles in 2x.scss
   @import 2x
 
